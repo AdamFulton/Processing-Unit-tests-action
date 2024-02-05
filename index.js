@@ -79,7 +79,7 @@ async function createAnnotations(errors) {
                 }
             });
         
-          
+        
             
         } catch (error) {
             core.setFailed(error.message);
@@ -87,7 +87,8 @@ async function createAnnotations(errors) {
     })
 
     if (errors !== null) {
-      core.setFailed(`Actions failed due to failed unit tests`)
+      core.setFailed(`Actions failed due to failed unit tests}`)
+    }
     }
 
     function getTestFailureMessage(file) {

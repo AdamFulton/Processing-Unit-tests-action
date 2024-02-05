@@ -50,7 +50,7 @@ async function createAnnotations(errors) {
 
     try {
 
-        counter++
+      
 
           const token = core.getInput('repo-token');
           const octokit = github.getOctokit(token);
@@ -79,14 +79,15 @@ async function createAnnotations(errors) {
                 }
             });
         
-            if (counter < 1) {
-            core.setFailed(`Actions failed due to failed unit tests}`)
-            }
+          
             
         } catch (error) {
             core.setFailed(error.message);
         }
     })
+
+    if (errors !== null) {
+      core.setFailed(`Actions failed due to failed unit tests`)
     }
 
     function getTestFailureMessage(file) {

@@ -43,13 +43,14 @@ function checkIfFileExists(file) {
 async function createAnnotations(errors) {
         
     
+    let counter = 0 
+
     // loop through errors array and create annotations for each error
-
-   
-
     errors.forEach(async error => {
 
     try {
+
+        counter++
 
           const token = core.getInput('repo-token');
           const octokit = github.getOctokit(token);
@@ -78,9 +79,9 @@ async function createAnnotations(errors) {
                 }
             });
         
-            
+            if (counter < 1) {
             core.setFailed(`Actions failed due to failed unit tests}`)
-    
+            }
             
         } catch (error) {
             core.setFailed(error.message);

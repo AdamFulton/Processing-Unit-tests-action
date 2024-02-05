@@ -1,0 +1,15 @@
+name: Processing Unit test runner
+description: "Runs unit tests for COMP1050"
+
+inputs:
+  repo-token:
+    description: "The repository token"
+    required: true
+    default: ${{ github.token }}
+  file-input:
+    description: 'Path to the input file'
+    required: true
+runs:
+  using: "node16"
+  main: "index.js"
+ 

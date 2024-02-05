@@ -1,0 +1,4 @@
+Test: testIsOver01 FAILED with message: testIsOver01 failed for thing at (100.0,100.0) and test value (100.0,100.0)
+Test: testIsOver02 FAILED with message: testIsOver02 failed for thing at (300.0,300.0) and test value (200.0,200.0)
+Test: testBoundary01 PASSED
+Finished.
